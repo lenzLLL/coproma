@@ -33,7 +33,7 @@ export default function QuiSommesNous() {
       <COPROMAHeader />
 
       {/* Hero Banner Section - images plus visibles */}
-      <section className="relative h-[320px] md:h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
+      <section className="relative sm:p-32 p-0 h-[320px] md:h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
         {/* Images de fond superposées */}
         <img
           src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg"
@@ -56,7 +56,7 @@ export default function QuiSommesNous() {
         {/* Overlay glassmorphism très léger */}
         <div className="absolute inset-0 bg-white/5 dark:bg-black/10 backdrop-blur-sm" style={{ zIndex: 3 }} />
         {/* Overlay dégradé premium */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#2E7D32]/40 via-transparent to-transparent dark:from-[#1B5E20]/40" style={{ zIndex: 4 }} />
+        <div className="absolute inset-0 bg-linear-to-t from-[#2E7D32]/40 via-transparent to-transparent dark:from-[#1B5E20]/40" style={{ zIndex: 4 }} />
         {/* Motif quadrillage */}
         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ zIndex: 5 }}>
           <div
