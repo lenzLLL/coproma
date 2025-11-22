@@ -51,7 +51,7 @@ export default function Contact() {
       <COPROMAHeader />
 
       {/* Hero Banner Section - premium immersif */}
-      <section className="relative h-[320px] md:h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
+      <section className="relative h-[60vh]  lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
         {/* Images de fond superposées */}
         <img
           src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80"

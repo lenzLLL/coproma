@@ -74,7 +74,7 @@ export default function Actualites() {
       <COPROMAHeader />
 
       {/* Hero Banner Section - premium immersif */}
-      <section className="relative h-[320px] md:h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8FAF5] via-[#E8F5E9] to-[#C8E6C9] dark:from-[#1A1F1A] dark:via-[#121212] dark:to-[#1B3A1B]">
+      <section className="relative h-[60vh]   lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8FAF5] via-[#E8F5E9] to-[#C8E6C9] dark:from-[#1A1F1A] dark:via-[#121212] dark:to-[#1B3A1B]">
         {/* Images de fond superposées */}
         <img
           src="https://images.pexels.com/photos/1002703/pexels-photo-1002703.jpeg"

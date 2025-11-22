@@ -33,7 +33,7 @@ export default function FemmesRurales() {
       <COPROMAHeader />
 
       {/* Hero Banner Section - moderne et immersif */}
-      <section className="relative h-[320px] md:h-[400px] lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#FFB300] via-[#FFA000] to-[#FF8F00] dark:from-[#FFA000] dark:via-[#FFC107] dark:to-[#FFB300]">
+      <section className="relative h-[60vh]  lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#FFB300] via-[#FFA000] to-[#FF8F00] dark:from-[#FFA000] dark:via-[#FFC107] dark:to-[#FFB300]">
         {/* Images de fond superposées */}
         <img
           src="https://images.pexels.com/photos/13009244/pexels-photo-13009244.jpeg"

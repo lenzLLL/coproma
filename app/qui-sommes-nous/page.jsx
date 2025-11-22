@@ -33,7 +33,7 @@ export default function QuiSommesNous() {
       <COPROMAHeader />
 
       {/* Hero Banner Section - images plus visibles */}
-      <section className="relative  lg:mt-0 h-[70vh]   lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
+      <section className="relative   h-[60vh]   lg:h-[480px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#2E7D32] via-[#43A047] to-[#1B5E20] dark:from-[#1B5E20] dark:via-[#388E3C] dark:to-[#121212]">
         {/* Images de fond superposées */}
         <img
           src="https://images.pexels.com/photos/1435904/pexels-photo-1435904.jpeg"
