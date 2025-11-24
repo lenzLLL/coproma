@@ -1,10 +1,10 @@
 "use client";
-
+import emailjs from "@emailjs/browser";
 import COPROMAHeader from "@/components/COPROMAHeader";
 import COPROMAFooter from "@/components/COPROMAFooter";
 import { useState } from "react";
-import { Bug, Flower2, Shell, Droplets, Briefcase, Check } from "lucide-react";
-
+import { Bug, Flower2, Shell, Droplets, Briefcase, Check, Fish } from "lucide-react";
+// copromarafamcopromarafam
 export default function Formations() {
   const [formData, setFormData] = useState({
     name: "",
@@ -45,6 +45,13 @@ export default function Formations() {
       color: "bg-[#FFB300]",
     },
     {
+      icon: Fish,
+      title: "Pisciculture (élevage de poissons)",
+      duration: "5-10 jours",
+      level: "Débutant à avancé",
+      color: "bg-[#0288D1]",
+    },
+    {
       icon: Briefcase,
       title: "Montage de projet et business plan agro-pastoral",
       duration: "3 jours",
@@ -67,22 +74,22 @@ export default function Formations() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
+    
+     
+
     try {
-      const response = await fetch("/api/training-registration", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
-      }
-
-      setSubmitMessage(
-        "Votre inscription a été envoyée avec succès ! Nous vous contacterons bientôt.",
+          const templateParams = {
+      email:"copromarafam@gmail.com",
+      name: "Formation: "+ formData.name + " "+formData.phone+" "+formData.domain,
+    };
+      const result = await emailjs.send(
+        "service_lnnc46d", // Remplace par ton service ID
+        'template_te8t1r7', // Remplace par ton template ID
+        templateParams,
+        'lb_BgoUzA_095QY5J' // Remplace par ta clé publique
       );
+
+      alert("Votre message a été envoyé avec succès !")
       setFormData({ name: "", phone: "", domain: "", message: "" });
     } catch (error) {
       console.error(error);
@@ -215,7 +222,7 @@ export default function Formations() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {advantages.map((advantage, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 bg-[#2E7D32] dark:bg-[#4CAF50] rounded-full flex items-center justify-center mt-0.5">
+                    <div className="shrink-0 w-6 h-6 bg-[#2E7D32] dark:bg-[#4CAF50] rounded-full flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <p className="text-[#121212] dark:text-white">
@@ -226,7 +233,7 @@ export default function Formations() {
               </div>
             </div>
 
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="aspect-4/3 rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.pexels.com/photos/34842217/pexels-photo-34842217.jpeg"
                 alt="Formation sur le terrain"

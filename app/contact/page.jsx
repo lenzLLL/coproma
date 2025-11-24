@@ -4,40 +4,41 @@ import COPROMAHeader from "@/components/COPROMAHeader";
 import COPROMAFooter from "@/components/COPROMAFooter";
 import { useState } from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    subject: "",
+
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
 
+    
+     
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi");
-      }
-
-      setSubmitMessage(
-        "Votre message a été envoyé avec succès ! Nous vous contacterons bientôt.",
+          const templateParams = {
+      email:"copromarafam@gmail.com",
+      name: "Message: "+ formData.name + " "+formData.phone+" "+formData.email+" "+formData.message,
+    };
+      const result = await emailjs.send(
+        "service_lnnc46d", // Remplace par ton service ID
+        'template_te8t1r7', // Remplace par ton template ID
+        templateParams,
+        'lb_BgoUzA_095QY5J' // Remplace par ta clé publique
       );
-      setFormData({ name: "", phone: "", email: "", subject: "", message: "" });
+
+      alert("Votre message a été envoyé avec succès !")
+      setFormData({ name: "", phone: "", domain: "", message: "" ,email:""});
     } catch (error) {
       console.error(error);
       setSubmitMessage("Une erreur est survenue. Veuillez réessayer.");
@@ -45,7 +46,6 @@ export default function Contact() {
       setIsSubmitting(false);
     }
   };
-
   return (
     <div className="min-h-screen bg-white dark:bg-[#121212]">
       <COPROMAHeader />
@@ -185,15 +185,12 @@ export default function Contact() {
                     <input type="email" id="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border-2 border-[#2E7D32] dark:border-[#4CAF50] bg-white/90 dark:bg-[#222]/90 text-[#121212] dark:text-white focus:outline-none focus:border-[#43A047] dark:focus:border-[#388E3C] shadow-lg backdrop-blur-xl transition-all duration-300" />
                   </div>
                 </div>
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-[#121212] dark:text-white mb-2">Objet *</label>
-                  <input type="text" id="subject" value={formData.subject} onChange={(e) => setFormData({ ...formData, subject: e.target.value })} required className="w-full px-4 py-3 rounded-xl border-2 border-[#2E7D32] dark:border-[#4CAF50] bg-white/90 dark:bg-[#222]/90 text-[#121212] dark:text-white focus:outline-none focus:border-[#43A047] dark:focus:border-[#388E3C] shadow-lg backdrop-blur-xl transition-all duration-300" />
-                </div>
+          
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-[#121212] dark:text-white mb-2">Message *</label>
                   <textarea id="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required rows={6} className="w-full px-4 py-3 rounded-xl border-2 border-[#2E7D32] dark:border-[#4CAF50] bg-white/90 dark:bg-[#222]/90 text-[#121212] dark:text-white focus:outline-none focus:border-[#43A047] dark:focus:border-[#388E3C] shadow-lg backdrop-blur-xl transition-all duration-300" />
                 </div>
-                <button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-[#2E7D32] via-[#43A047] to-[#4CAF50] dark:from-[#4CAF50] dark:via-[#66BB6A] dark:to-[#81C784] text-white px-8 py-4 rounded-full font-extrabold text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed animate-fadeInUp">{isSubmitting ? "Envoi en cours..." : "Envoyer le message"}</button>
+                <button type="submit" disabled={isSubmitting} className="w-full bg-linear-to-r from-[#2E7D32] via-[#43A047] to-[#4CAF50] dark:from-[#4CAF50] dark:via-[#66BB6A] dark:to-[#81C784] text-white px-8 py-4 rounded-full font-extrabold text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed animate-fadeInUp">{isSubmitting ? "Envoi en cours..." : "Envoyer le message"}</button>
                 {submitMessage && (
                   <div className={`p-4 rounded-xl ${submitMessage.includes("succès") ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100" : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100"}`}>{submitMessage}</div>
                 )}

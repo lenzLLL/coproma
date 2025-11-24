@@ -33,6 +33,21 @@ export default function HomePage() {
         "https://images.pexels.com/photos/348689/pexels-photo-348689.jpeg",
       alt: "Formation agricole",
     },
+        {
+      image:
+        "/n.jpg",
+      alt: "Héliciculture",
+    },
+        {
+      image:
+        "https://images.pexels.com/photos/8105066/pexels-photo-8105066.jpeg",
+      alt: "Apiculture",
+    },
+    {
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjBFIKVz0_6vsKpj6X21wXhQ-ah_DaMoGYKQ&s",
+      alt:'Fossiculture'
+    }
+    
   ];
 
   useEffect(() => {
