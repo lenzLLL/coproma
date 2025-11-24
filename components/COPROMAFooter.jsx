@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnve
 
 export default function COPROMAFooter() {
   return (
-    <footer className="relative bg-gradient-to-br from-[#174a1c] via-[#2E7D32] to-[#174a1c] dark:from-[#0D3D0D] dark:via-[#1B5E20] dark:to-[#0D3D0D] text-white overflow-hidden shadow-2xl">
+    <footer className="relative bg-linear-to-br from-[#174a1c] via-[#2E7D32] to-[#174a1c] dark:from-[#0D3D0D] dark:via-[#1B5E20] dark:to-[#0D3D0D] text-white overflow-hidden shadow-2xl">
       {/* Animated decorative pattern overlay */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -26,7 +26,7 @@ export default function COPROMAFooter() {
                 Transformez votre projet agricole —
               </span>
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFB300] via-[#FFC107] to-[#FFD54F] animate-gradient-x">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-[#FFB300] via-[#FFC107] to-[#FFD54F] animate-gradient-x">
                 Contactez-nous
               </span>
               <span className="text-white/90"> pour un devis gratuit</span>
@@ -34,10 +34,10 @@ export default function COPROMAFooter() {
           </div>
 
           {/* Enhanced Circular CTA button with icon and glow */}
-          <div className="flex-shrink-0 text-center lg:text-right">
+          <div className="shrink-0 text-center lg:text-right">
             <div className="inline-block relative group">
               {/* Animated glow effect */}
-              <div className="absolute -inset-5 bg-gradient-to-br from-[#FFB300]/40 to-[#FF8F00]/40 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-all"></div>
+              <div className="absolute -inset-5 bg-linear-to-br from-[#FFB300]/40 to-[#FF8F00]/40 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-all"></div>
 
               {/* Outer ring with gradient */}
               <div className="absolute -inset-2 w-52 h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full border-2 border-white/10"></div>
@@ -45,7 +45,7 @@ export default function COPROMAFooter() {
               {/* Main button with gradient and icon */}
               <a
                 href="/contact"
-                className="relative bg-gradient-to-br from-[#FFB300] to-[#FF8F00] w-48 h-48 md:w-60 md:h-60 lg:w-64 lg:h-64 rounded-full text-white font-extrabold text-xl md:text-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#FFB300]/60 active:scale-95 flex flex-col items-center justify-center touch-manipulation shadow-xl border-4 border-white/10"
+                className="relative bg-linear-to-br from-[#FFB300] to-[#FF8F00] w-48 h-48 md:w-60 md:h-60 lg:w-64 lg:h-64 rounded-full text-white font-extrabold text-xl md:text-2xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#FFB300]/60 active:scale-95 flex flex-col items-center justify-center touch-manipulation shadow-xl border-4 border-white/10"
               >
                 <FaEnvelope className="mb-2 text-4xl md:text-5xl drop-shadow-lg animate-bounce" />
                <span className="text-sm">Démarrer un projet</span> 
@@ -60,7 +60,7 @@ export default function COPROMAFooter() {
           <div className="space-y-4">
             <h3 className="font-bold text-white text-base mb-4 relative inline-block tracking-wide">
               Menu
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-[#FFB300] to-transparent"></span>
+              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-linear-to-r from-[#FFB300] to-transparent"></span>
             </h3>
             <nav className="space-y-3">
               <a href="/" className="flex items-center gap-2 text-sm text-white opacity-70 hover:opacity-100 hover:underline transition-all duration-200">
@@ -133,10 +133,10 @@ export default function COPROMAFooter() {
                 <FaMapMarkerAlt className="text-[#FFB300]" /> <span><strong className="opacity-100">Fermes:</strong> Sanaga Maritime</span>
               </p>
               <p className="flex items-center gap-2">
-                <FaPhoneAlt className="text-[#FFB300]" /> <span>+237 6 99 99 99 99</span>
+                <FaPhoneAlt className="text-[#FFB300]" /> <span>+237 6 56 42 14 41</span>
               </p>
               <p className="flex items-center gap-2">
-                <FaEnvelope className="text-[#FFB300]" /> <span>contact@coproma.com</span>
+                <FaEnvelope className="text-[#FFB300]" /> <span>copromarafam@gmail.com</span>
               </p>
             </div>
             <div className="flex gap-4 mt-4">
